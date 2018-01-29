@@ -1,5 +1,5 @@
 {
-  "name": "immersive-todo-app-react",
+  "name": "CRM",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -13,6 +13,7 @@
     "path": "^0.12.7",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-bootstrap": "^0.32.0",
     "react-dom": "^16.2.0",
     "uuid": "^3.2.1",
     "webpack": "^3.10.0",
