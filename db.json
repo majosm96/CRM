@@ -44,5 +44,22 @@
       "position": "CEO",
       "company": "Web"
     }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "value": "Task01",
+      "done": false
+    },
+    {
+      "id": 2,
+      "value": "Task02",
+      "done": false
+    },
+    {
+      "id": 3,
+      "value": "Task03",
+      "done": false
+    }
   ]
 }

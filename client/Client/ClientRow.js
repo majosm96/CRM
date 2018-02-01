@@ -1,13 +1,13 @@
 import React from 'react';
 import { object } from 'prop-types';
 
-const ClientRow = ({ client }) => (
+const ClientRow = props => (
   <tr>
-    <td>{client.name}</td>
-    <td>{client.email}</td>
-    <td>{client.phone}</td>
-    <td>{client.position}</td>
-    <td>{client.company}</td>
+    <td>{props.client.name}</td>
+    <td>{props.client.email}</td>
+    <td>{props.client.phone}</td>
+    <td>{props.client.position}</td>
+    <td>{props.client.company}</td>
   </tr>
 );
 

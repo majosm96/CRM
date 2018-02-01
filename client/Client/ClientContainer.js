@@ -1,16 +1,16 @@
-import React from 'react';
-import ClientTable from './ClientTable';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { func, array } from 'prop-types';
 
-class ClientContainer extends React.Component {
+import ClientTable from './ClientTable';
+import { fetchData } from './actions';
+
+class ClientContainer extends Component {
   // State
   constructor(props) {
     super(props);
-    this.state = {
-      clients: [],
-    };
 
-    console.log(this.state.clients);
-
+    // Medhod
     this.render = this.render.bind(this);
   }
 
@@ -20,7 +20,7 @@ class ClientContainer extends React.Component {
     fetch(url)
       .then(resp => resp.json())
       .then((data) => {
-        this.setState({ clients: data });
+        this.props.fetchData(data);
       });
   }
 
@@ -30,11 +30,34 @@ class ClientContainer extends React.Component {
       <div>
         <h1>Clients</h1>
         <div>
-          <ClientTable clients={this.state.clients} />
+          <ClientTable clients={this.props.clients} />
         </div>
       </div>
     );
   }
 }
 
-export default ClientContainer;
+function mapStateToProps(state) {
+  return {
+    clients: state.clients,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchData: value => dispatch(fetchData(value)),
+  };
+}
+
+ClientContainer.propTypes = {
+  clients: array,
+  fetchData: func,
+};
+
+ClientContainer.defaultProps = {
+  clients: [],
+  fetchData: () => {},
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ClientContainer);
+
