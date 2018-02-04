@@ -1,0 +1,130 @@
+{
+  "department": [
+    { "id": 1, 
+      "name": "Administration"
+    },
+    { "id": 2, 
+      "name": "Development" 
+    },
+    { "id": 3, 
+      "name": "Human Resources" 
+    },
+    { "id": 4, 
+      "name": "CEO" 
+    },
+    { "id": 5, 
+      "name": "Marketing"
+    }
+  ],
+  
+  "employee": [
+    { "rol": "Manager",
+      "department": "Development", 
+      "id": 1,
+      "name": "Gustavo Alvarado",
+      "emailcompany": "gustavo@intranet.com",
+      "emailpersonal": "tavo@gmail.com",
+      "extension": 10,
+      "phonepersonal": 87660071
+    },
+    { "rol": "Manager",
+      "department": "Marketing", 
+      "id": 2,
+      "name": "Lilliana Cespedes",
+      "emailcompany": "lilliana@intranet.com",
+      "emailpersonal": "lilly@gmail.com",
+      "extension": 20,
+      "phonepersonal": 83450978
+    },
+    { "rol": "Manager",
+      "department": "CEO", 
+      "id": 3,
+      "name": "Brad Esquivel",
+      "emailcompany": "brad@intranet.com",
+      "emailpersonal": "brad@gmail.com",
+      "extension": 30,
+      "phonepersonal": 70894562
+    },
+    { "rol": "Manager",
+      "department": "Administration", 
+      "id": 4,
+      "name": "Sergio Delgado",
+      "emailcompany": "sergio@intranet.com",
+      "emailpersonal": "sergio@gmail.com",
+      "extension": 40,
+      "phonepersonal": 81402309
+    },
+    { "rol": "Manager",
+      "department": "Human Resources", 
+      "id": 5,
+      "name": "Marta Brenes",
+      "emailcompany": "marta@intranet.com",
+      "emailpersonal": "marta@gmail.com",
+      "extension": 50,
+      "phonepersonal": 70001200
+    }
+  ],
+  "companies": [
+    {
+      "id": 101,
+      "name": "Konrad",
+      "address": "Tres Rios",
+      "phone": "23230909"
+    },
+    {
+      "id": 102,
+      "name": "Web",
+      "address": "Escazu",
+      "phone": "23231010"
+    },
+    {
+      "id": 103,
+      "name": "Design",
+      "address": "San Pedro",
+      "phone": "23230101"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "Ana",
+      "email": "ana@gmail.com",
+      "phone": "87873434",
+      "position": "CEO",
+      "company": "Web"
+    },
+    {
+      "id": 2,
+      "name": "Jose",
+      "email": "jose@gmail.com",
+      "phone": "87873000",
+      "position": "CEO",
+      "company": "Web"
+    },
+    {
+      "id": 3,
+      "name": "Monica",
+      "email": "mon@gmail.com",
+      "phone": "87873123",
+      "position": "CEO",
+      "company": "Web"
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "value": "Task01",
+      "done": false
+    },
+    {
+      "id": 2,
+      "value": "Task02",
+      "done": false
+    },
+    {
+      "id": 3,
+      "value": "Task03",
+      "done": false
+    }
+  ]
+}

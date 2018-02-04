@@ -1,0 +1,84 @@
+.container {
+    margin: 5rem;
+}
+
+.background-blue {
+    background-color: rgb(19, 17, 43);
+}
+
+.h1-section {
+    color: #fff;
+}
+
+.Intro-nav {
+    width: 30%;
+    float: left;
+    height: 100vh;
+    background-color: rgb(25, 25, 44);
+}
+
+.Intro-nav__item {
+    margin: 1rem;
+    color: #ffff81;
+    font-weight: 200;
+}
+
+.Intro-nav__item-link {
+    color: #ffff81;
+    margin-top: 20rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 100;
+}
+
+.Intro-nav__item-link:hover {
+    color: #ffff53;
+    text-decoration: none;
+    border-bottom: 1px solid #50f9e1;
+}
+
+.Intro-nav_item::before,
+.Intro-nav_item .vertical-align {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.section-wrap {
+    padding: 2rem;
+}
+
+.table td  {
+    border-top: none;
+}
+
+.table-row {
+    border: 1px solid rgb(25, 25, 44);
+}
+
+.component__title {
+    padding: 4rem 2rem 2rem;
+}
+
+.main--open {
+    width: 70%;
+    float: left;
+}
+
+.dashboard {
+    display: flex;
+    width: 36%;
+    float: right;
+    margin: 1rem;
+}
+
+.dashboard-img img {
+    width: 100%;
+    padding: 0.7rem;
+}
+
+.dashboard-img-user img {
+    width: 50px;
+    border-radius: 25px;
+}
