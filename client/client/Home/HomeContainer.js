@@ -4,8 +4,7 @@ const HomeContainer = () => (
   <div>
     <h3>New client</h3>
     <div>
-      <label htmlFor="clientName">from:</label>
-      <input type="text" id="name" name="clientName" />
+      <h1>I am a home page</h1>
     </div>
   </div>
 );
