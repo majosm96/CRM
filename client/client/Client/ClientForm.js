@@ -1,24 +1,37 @@
 import React from 'react';
-// import { array } from 'prop-types';
-// import { Form, FormGroup, Label, Input } from 'react-bootstrap/lib/Form';
-// import { Form, Button } from 'semantic-ui-react';
 
 const ClientForm = () => (
   <div>
     <h3>New client</h3>
-    <div>
-      <label for="clientName">from:</label>
-      <input type="text" id="name" name="clientName">
-    </div>
+    <form className="form-basic">
+      <div className="form-item">
+        <label htmlFor="newClientName">Name</label>
+        <input type="text" id="clientName" name="newClientName" placeholder="Full name" />
+      </div>
+      <div className="form-item">
+        <label htmlFor="clientEmail">Email</label>
+        <input type="text" id="clientEmail" name="clientEmail" placeholder="email" />
+      </div>
+      <div className="form-item">
+        <label htmlFor="clientPhone">Phone</label>
+        <input type="text" id="clientPhone" name="clientPhone" placeholder="Phone number" />
+      </div>
+      <div className="form-item">
+        <label htmlFor="clientPosition">Position</label>
+        <input type="text" id="clientPosition" name="clientPosition" placeholder="Full name" />
+      </div>
+      <div className="form-item">
+        <label htmlFor="clientCompany">Company</label>
+        <input type="text" id="clientCompany" name="clientCompany" placeholder="Full name" />
+      </div>
+      <div className="form-item">
+        <button className="btn-primary"> Add
+        </button>
+      </div>
+    </form>
   </div>
 );
 
-// ClientTable.propTypes = {
-//   clients: array,
-// };
 
-// ClientTable.defaultProps = {
-//   clients: [],
-// };
 
 export default ClientForm;

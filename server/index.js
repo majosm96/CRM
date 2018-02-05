@@ -1,18 +1,33 @@
+require('dotenv').config()
 const express = require('express')
-const app = express() 
-const port = 3030
+const mongoose = require('mongoose')
+const morgan = require('morgan')
+const DB_QUERY_STRING = process.env.DB
+  || 'mongodb://localhost:27017/clientlist'
 
-app.get('/', (request, response) => { 
-  response.send('Hello from Express!') 
+const clientRoutes = require('./routes/clients')
+const app = express()
+
+app.use(morgan('tiny'))
+
+app.set('port', process.env.PORT || 3000)
+
+mongoose.connect(DB_QUERY_STRING)
+
+app.get('/', (req, res) => {
+  res.send('CLIENT API HOME PAGE 💩')
 })
 
-app.get('/about', (request, response) => { 
-  response.send('About!') 
+app.use('/api/v2/clients', clientRoutes)
+
+// app.get('/about', (req, res) => {
+//   res.send('ABOUT 💩')
+// })
+
+app.listen(app.get('port'), err => {
+  if (err) return console.log(`something bad happened 💩 ${err}`)
+  console.log(`server listening on ${app.get('port')}`)
 })
 
-app.listen(port, (err) => { 
-  if (err) {
-    return console.log('something bad happened', err)
-  }
-  console.log(`server is listening on ${port}`)
-})
+
+

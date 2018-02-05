@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <header>
         <nav className="Intro-nav ">
-          <h2 className="Intro-nav__item">CRM</h2>
+          <h2 className=" sidebar__title">CRM</h2>
           <div className="Intro-nav__item">
             <Link className="Intro-nav__item-link vertical-align" to='/Clients'>Clients</Link>
           </div>
@@ -22,7 +22,7 @@ const App = () => {
       <h1 className="h-section">CRM</h1>
       </section> */}
       <main className="main--open">
-        <section className="dashboard">
+        {/* <section className="dashboard">
           <div className="dashboard-img">
             <img src="./imgs/notification.png"></img>
           </div>
@@ -35,7 +35,7 @@ const App = () => {
           <div className="dashboard-img dashboard-img-user">
             <img src="./imgs/avatar-sample.png"></img>
           </div>
-        </section>
+        </section> */}
         <Switch> 
           <Route path="/Clients" component={ClientContainer} />
           <Route path="/Companies" component={CompanyContainer} />
