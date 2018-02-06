@@ -1,5 +1,5 @@
 import React from 'react';
-import { array } from 'prop-types';
+import { array, func } from 'prop-types';
 
 import ClientRow from './ClientRow';
 
@@ -10,7 +10,7 @@ const ClientTable = (props) => {
     <table className="table table-hover">
       <thead>
         <tr>
-          <td>Id</td>
+          <td>ID</td>
           <td>Name</td>
           <td>Email</td>
           <td>Phone</td>
@@ -19,7 +19,12 @@ const ClientTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {props.clients.map(item => <ClientRow key={item.id} client={item} />)}
+        {props.clients.map(item => (<ClientRow
+          key={item.id} 
+          client={item}
+          singleClientView={props.singleClientView} 
+          deleteClient={props.handleDelete} 
+        />))}
       </tbody>
     </table>
   );
@@ -27,10 +32,14 @@ const ClientTable = (props) => {
 
 ClientTable.propTypes = {
   clients: array,
+  singleClientView: func,
+  handleDelete: func,
 };
 
 ClientTable.defaultProps = {
-  clients: []
+  clients: [],
+  singleClientView: () => {},
+  handleDelete: () => {},
 };
 
 export default ClientTable;

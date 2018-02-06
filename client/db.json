@@ -1,25 +1,30 @@
 {
   "department": [
-    { "id": 1, 
+    {
+      "id": 1,
       "name": "Administration"
     },
-    { "id": 2, 
-      "name": "Development" 
+    {
+      "id": 2,
+      "name": "Development"
     },
-    { "id": 3, 
-      "name": "Human Resources" 
+    {
+      "id": 3,
+      "name": "Human Resources"
     },
-    { "id": 4, 
-      "name": "CEO" 
+    {
+      "id": 4,
+      "name": "CEO"
     },
-    { "id": 5, 
+    {
+      "id": 5,
       "name": "Marketing"
     }
   ],
-  
   "employee": [
-    { "rol": "Manager",
-      "department": "Development", 
+    {
+      "rol": "Manager",
+      "department": "Development",
       "id": 1,
       "name": "Gustavo Alvarado",
       "emailcompany": "gustavo@intranet.com",
@@ -27,8 +32,9 @@
       "extension": 10,
       "phonepersonal": 87660071
     },
-    { "rol": "Manager",
-      "department": "Marketing", 
+    {
+      "rol": "Manager",
+      "department": "Marketing",
       "id": 2,
       "name": "Lilliana Cespedes",
       "emailcompany": "lilliana@intranet.com",
@@ -36,8 +42,9 @@
       "extension": 20,
       "phonepersonal": 83450978
     },
-    { "rol": "Manager",
-      "department": "CEO", 
+    {
+      "rol": "Manager",
+      "department": "CEO",
       "id": 3,
       "name": "Brad Esquivel",
       "emailcompany": "brad@intranet.com",
@@ -45,8 +52,9 @@
       "extension": 30,
       "phonepersonal": 70894562
     },
-    { "rol": "Manager",
-      "department": "Administration", 
+    {
+      "rol": "Manager",
+      "department": "Administration",
       "id": 4,
       "name": "Sergio Delgado",
       "emailcompany": "sergio@intranet.com",
@@ -54,8 +62,9 @@
       "extension": 40,
       "phonepersonal": 81402309
     },
-    { "rol": "Manager",
-      "department": "Human Resources", 
+    {
+      "rol": "Manager",
+      "department": "Human Resources",
       "id": 5,
       "name": "Marta Brenes",
       "emailcompany": "marta@intranet.com",
@@ -108,6 +117,22 @@
       "phone": "87873123",
       "position": "CEO",
       "company": "Web"
+    },
+    {
+      "id": "a72cfcc0-0b51-11e8-9774-a719c4f9515f",
+      "name": "majos",
+      "email": "majosm96@gmail.com",
+      "phone": "87328739",
+      "position": "junior",
+      "company": "none"
+    },
+    {
+      "id": "be3cf160-0b59-11e8-a907-b9e0e2ad4c7c",
+      "name": "Ana",
+      "email": "ana@gmail.com",
+      "phone": "89768976",
+      "position": "CEO",
+      "company": "NSDS"
     }
   ],
   "todos": [

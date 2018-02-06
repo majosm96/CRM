@@ -40,6 +40,24 @@ const clients = (state = DEFAULT_STATE, action) => {
       loading: false,
       error: action.error
     };
+    case 'DELETE_CLIENT_REQUEST':
+      return {
+        ...state,
+        loading: true,
+      };
+    case 'DELETE_CLIENT_SUCCESS':
+      return {
+        ...state,
+        loading: false,
+        todos: state.clients.filter((item) => {
+          return item.id !== action.id;
+        }),
+      };
+    case 'DELETE_CLIENT_FAILURE':
+      return {
+        ...state,
+        error: action.error,
+      };
     default:
       return state
   }

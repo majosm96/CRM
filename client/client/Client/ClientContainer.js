@@ -4,8 +4,7 @@ import { func, array } from 'prop-types';
 
 import ClientTable from './ClientTable'
 import ClientForm from './ClientForm'
-import { getClient, addClient } from './Actions'
-//import uuid from 'uuid/v1';
+import { getClient, addClient, deleteClient } from './Actions'
 
 class ClientContainer extends Component {
 
@@ -24,6 +23,8 @@ class ClientContainer extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.showForm = this.showForm.bind(this);
+    this.singleClientView = this.singleClientView.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
 
@@ -55,13 +56,27 @@ class ClientContainer extends Component {
 
     this.props.addClient(client);
 
-    console.log('testing')
-    console.log(client)
-    //this.setState({ newTodoVal: '' });
+    this.setState = {
+      newClientName: '',
+      newClientEmail:  '',
+      newClientPhone: '',
+      newClientPosition: '',
+      newClientCompany: '',
+    };
   }
 
   showForm() {
-    console.log('you are in')
+    console.log('CTS is working')
+  }
+
+  singleClientView() {
+    console.log('its a single client view function')
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteClient(e.getAttribute('id'));
+    console.log(e.getAttribute('id'))  
   }
 
 
@@ -79,17 +94,18 @@ class ClientContainer extends Component {
             <img src="./imgs/avatar-sample.png" alt="user"  />
           </div>
         </div>
-        <h3 className="component__title">Clients</h3>
         <div className="section-wrap">
           <ClientForm
-            // item={}
             handleSubmit={this.handleSubmit}
             handleInputChange={this.handleInputChange}
           />
-          <ClientTable  clients={this.props.clients} />
+          <h3 className="component__title">Clients</h3>
+          <ClientTable  
+            clients={this.props.clients} 
+            singleClientView={this.singleClientView} 
+            deleteClient={this.handleDelete}
+          />
         </div>
-        
-        {/* <EmployeeTable /> */}
       </div>
     )
   }
@@ -104,10 +120,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addTodo: value => dispatch(addClient(value)),
+    addClient: contact => dispatch(addClient(contact)),
     loadData: () => {
       dispatch(getClient())
     },
+    deleteClient: id => dispatch(deleteClient(id)),
   }
 }
 
@@ -115,12 +132,14 @@ ClientContainer.propTypes = {
   clients: array,
   loadData: func,
   addClient: func,
+  deleteClient: func,
 }
 
 ClientContainer.defaultProps = {
   clients: [],
   loadData: () => {},
   addClient: () => {},
+  deleteClient: () => {},
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClientContainer)

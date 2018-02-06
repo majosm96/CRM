@@ -9,8 +9,11 @@ const GET_CLIENTS_FAILURE = 'GET_CLIENTS_FAILURE'
 const ADD_CLIENT_REQUEST = 'ADD_CLIENT_REQUEST'
 const ADD_CLIENT_SUCCESS = 'ADD_CLIENT_SUCCESS'
 const ADD_CLIENT_FAILURE = 'ADD_CLIENT_FAILURE'
+const DELETE_CLIENT_REQUEST = 'DELETE_CLIENT_REQUEST';
+const DELETE_CLIENT_SUCCESS = 'DELETE_CLIENT_SUCCESS';
+const DELETE_CLIENT_FAILURE = 'DELETE_CLIENT_FAILURE';
 
-const addClient = value => (dispatch) => {
+const addClient = contact => (dispatch) => {
   dispatch({
     type: ADD_CLIENT_REQUEST,
   });
@@ -19,11 +22,7 @@ const addClient = value => (dispatch) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       id: uuid(),
-      name: value.name,
-      email: value.email,
-      phone: value.phone,
-      position: value.position,
-      company: value.company
+      ...contact,
     }),
   })
     .then(response => response.json())
@@ -63,7 +62,31 @@ const getClient = () => {
   }
 }
 
+const deleteClient = id => (dispatch) => {
+  dispatch({
+    type: DELETE_CLIENT_REQUEST,
+    id,
+  });
+  fetch(`${API_URL}/${id}`, {
+    method: 'DELETE',
+  })
+    .then(response => response.json())
+    .then(() => {
+      dispatch({
+        type: DELETE_CLIENT_SUCCESS,
+        id,
+      });
+    })
+    .catch((error) => {
+      dispatch({
+        type: DELETE_CLIENT_FAILURE,
+        error,
+      });
+    });
+};
+
 module.exports = {
   addClient,
   getClient,
+  deleteClient,
 };

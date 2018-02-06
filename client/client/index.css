@@ -47,11 +47,23 @@ h5 {
 .sidebar__title {
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background-color: #ff3e3e;
+    background-color: #50f9e1;
     color: white;
     margin: 0;
     padding: 3rem;
     font-weight: 200;
+    text-align: center;
+}
+
+.sidebar__title:before {
+    content: "";
+    display: block;
+    background: center no-repeat url(./imgs/logo2.png);
+    width: 100%;
+    height: 56px;
+    background-size: 81%;
+    margin-bottom: 10px;
+    float: left;
 }
 
 .Intro-nav__item-link {
@@ -87,6 +99,12 @@ h5 {
 
 thead {
     font-weight: 700;
+}
+
+/*Table Action*/
+
+.delete__action {
+    width: 50px;
 }
 
 .component__title {
@@ -199,9 +217,20 @@ thead {
     width: 50%;
     float: right;
     text-align: center;
-    margin-top: 10%;
-    padding-top: 34%;
-    padding-bottom: 26%;
+    margin-top: 5%;
+    padding-top: 19%;
+    padding-bottom: 11%;
+}
+
+.home-item h4 {
+    display: inline;
+    color: #fff;
+    text-decoration: none;
+}
+
+.home-item h4:hover {
+    color: #ff3e3e;
+    text-decoration: none;
 }
 
 .home-item:first-child {
@@ -209,6 +238,8 @@ thead {
 }
 
 .home-item__img {
-    max-width: 150px;
+    max-width: 100px;
     padding: 1rem;
+    display: block;
+    margin: 0 auto;
 }
