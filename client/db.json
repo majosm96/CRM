@@ -91,6 +91,12 @@
       "name": "Design",
       "address": "San Pedro",
       "phone": "23230101"
+    },
+    {
+      "id": "1b77bd20-0b63-11e8-8beb-ebf5041bed26",
+      "name": "Possible",
+      "address": "Escazu",
+      "phone": "34343434"
     }
   ],
   "clients": [

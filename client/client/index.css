@@ -66,6 +66,12 @@ h5 {
     float: left;
 }
 
+@media only screen and (max-width: 600px) {
+    .sidebar__title:before {
+        background-size: 20%;
+    }
+}
+
 .Intro-nav__item-link {
     color: #fff;
     margin-top: 20rem;
@@ -122,6 +128,7 @@ thead {
 .dashboard {
     display: flex;
     float: right;
+    display: none;
 }
 
 .dashboard-img {
@@ -148,11 +155,11 @@ thead {
 }
 
 .form-basic input  {
-    margin: 0.5rem;
+    margin: 0.5rem 0;
 }
 
-.form-basic input::placeholder  {
-    margin: 0.5rem;
+input::placeholder  {
+    padding: 10px;
 }
 
 .form-basic {
@@ -213,6 +220,17 @@ thead {
     left: 0;
 }
 
+
+.home-container a {
+    cursor: pointer;
+}
+
+
+.home-container a:hover {
+    color: #ff3e3e;
+}
+
+
 .home-item {
     width: 50%;
     float: right;
@@ -222,13 +240,14 @@ thead {
     padding-bottom: 11%;
 }
 
-.home-item h4 {
+.home-item p {
     display: inline;
     color: #fff;
     text-decoration: none;
+    letter-spacing: 3px;
 }
 
-.home-item h4:hover {
+.home-item p:hover {
     color: #ff3e3e;
     text-decoration: none;
 }

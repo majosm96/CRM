@@ -24,7 +24,7 @@ const App = () => {
       </section> */}
       <main className="main--open section-wrap">
         <Switch>
-          {/*   */}
+          {/* <Route path="/" component={HomeContainer} /> */}
           <Route path="/Clients" component={ClientContainer} />
           <Route path="/Companies" component={CompanyContainer} />
         </Switch>
