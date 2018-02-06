@@ -18,7 +18,9 @@ const ClientTable = (props) => {
           <td>Company</td>
         </tr>
       </thead>
-      {props.clients.map(item => <ClientRow key={item.id} client={item} />)}
+      <tbody>
+        {props.clients.map(item => <ClientRow key={item.id} client={item} />)}
+      </tbody>
     </table>
   );
 }

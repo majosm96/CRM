@@ -10,14 +10,34 @@
     color: #fff;
 }
 
-/*Intro*/
+/*Basic*/
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+
+/*Intro*/
 .Intro-nav {
     width: 20%;
     float: left;
     height: 100vh;
     background-color: #080813;
 }
+
+@media only screen and (max-width: 650px) {
+    .Intro-nav {
+        width: 100%;
+        float: left;
+        height: auto;
+        text-align: center;
+    }
+}
+
 
 .Intro-nav__item {
     margin: 1rem;
@@ -56,6 +76,8 @@
   vertical-align: middle;
 }
 
+/*Page*/
+
 .section-wrap {
     padding: 2rem;
 }
@@ -77,27 +99,41 @@ thead {
     float: left;
 }
 
+/*Dashborad barra de arriba*/
+
 .dashboard {
     display: flex;
-    width: 36%;
     float: right;
-    margin: 1rem;
 }
 
+.dashboard-img {
+    float: right;
+}
+
+
 .dashboard-img img {
-    width: 100%;
+    width: 60px;
     padding: 0.7rem;
+    float: right;
 }
 
 .dashboard-img-user img {
-    width: 50px;
+    width: 55px;
     border-radius: 25px;
 }
 
 
 /*Form*/
 
+.form-container {
+    /* display: none; */
+}
+
 .form-basic input  {
+    margin: 0.5rem;
+}
+
+.form-basic input::placeholder  {
     margin: 0.5rem;
 }
 
@@ -111,7 +147,7 @@ thead {
     flex-wrap: wrap;
     -webkit-box-align: start;
     -ms-flex-align: start;
-    align-items: flex-start;
+    align-items: center;
     list-style: none;
     padding: 0;
 }
@@ -120,8 +156,8 @@ thead {
     -webkit-box-flex: 1;
     -ms-flex: 1 auto;
     flex: 1 auto;
-    max-width: 300px;
-    margin: 0.5rem;
+    max-width: 170px;
+    margin: 1rem 1.5rem;
 }
 
 .btn-primary {
@@ -142,4 +178,37 @@ thead {
 .btn-primary:hover {
     background-color: #ff2e2e;
     cursor: pointer;
+}
+
+/*HOME*/
+
+.home-container {
+    color: #fff;
+    background-color: #080813;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.home-item {
+    width: 50%;
+    float: right;
+    text-align: center;
+    margin-top: 10%;
+    padding-top: 34%;
+    padding-bottom: 26%;
+}
+
+.home-item:first-child {
+    border-left: 1px solid #f5f5f5;
+}
+
+.home-item__img {
+    max-width: 150px;
+    padding: 1rem;
 }

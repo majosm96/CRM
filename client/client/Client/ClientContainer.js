@@ -16,11 +16,14 @@ class ClientContainer extends Component {
       newClientEmail:  '',
       newClientPhone: '',
       newClientPosition: '',
-      newClienCompany: '',
+      newClientCompany: '',
     };
 
     this.render = this.render.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.showForm = this.showForm.bind(this);
   }
 
 
@@ -38,20 +41,51 @@ class ClientContainer extends Component {
       [name]: value
     });
 
+    console.log(value)
+
   }
 
   handleSubmit() {
-    let client = this.state;
+    let client = {}
+    client.name = this.state.newClientName;
+    client.email = this.state.newClientEmail;
+    client.phone = this.state.newClientPhone;
+    client.position = this.state.newClientPosition;
+    client.company = this.state.newClientCompany;
+
     this.props.addClient(client);
-    this.setState({ newTodoVal: '' });
+
+    console.log('testing')
+    console.log(client)
+    //this.setState({ newTodoVal: '' });
   }
+
+  showForm() {
+    console.log('you are in')
+  }
+
 
   render() {
     return (
-      <div>
+      <div className="">
+        <div className="dashboard clearfix ">
+          <div className="dashboard-img">
+            <img src="./imgs/chat.png" alt="Chat" />
+          </div>
+          <div role="button" tabIndex={0} className="dashboard-img" onClick={this.showFrom} onKeyDown={this.showFrom} > 
+            <img src="./imgs/addclient.png" alt="Add client" />
+          </div>
+          <div className="dashboard-img dashboard-img-user">
+            <img src="./imgs/avatar-sample.png" alt="user"  />
+          </div>
+        </div>
         <h3 className="component__title">Clients</h3>
         <div className="section-wrap">
-          <ClientForm />
+          <ClientForm
+            // item={}
+            handleSubmit={this.handleSubmit}
+            handleInputChange={this.handleInputChange}
+          />
           <ClientTable  clients={this.props.clients} />
         </div>
         
@@ -63,13 +97,14 @@ class ClientContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    // loading: state.loading,
+    loading: state.loading,
     clients: state.Client.clients
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
+    addTodo: value => dispatch(addClient(value)),
     loadData: () => {
       dispatch(getClient())
     },

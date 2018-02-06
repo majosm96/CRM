@@ -1,14 +1,14 @@
-const Todo = require('../models/Client')
+const Client = require('../models/Client')
 
 function getAll(req, res) {
-  Todo.find()
-    .exec((err, todos) => {
+  Client.find()
+    .exec((err, clients) => {
       if (err) {
         res.status(500)
         res.send(`Ocurrió un error 💩 ${err}`)
       }
       res.status(200)
-      res.json(todos)
+      res.json(clients)
     })
 }
 

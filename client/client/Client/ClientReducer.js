@@ -23,6 +23,23 @@ const clients = (state = DEFAULT_STATE, action) => {
       loading: false,
       error: action.error
     };
+    case 'ADD_CLIENT_REQUEST':
+    return {
+      ...state,
+      loading: true
+    };
+    case 'ADD_CLIENT_SUCCESS':
+      return {
+        ...state,
+        loading: false,
+        clients: [...state.clients, action.client],
+    };
+    case 'ADD_CLIENT_FAILURE':
+    return {
+      ...state,
+      loading: false,
+      error: action.error
+    };
     default:
       return state
   }

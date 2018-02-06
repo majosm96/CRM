@@ -10,7 +10,7 @@ const ADD_CLIENT_REQUEST = 'ADD_CLIENT_REQUEST'
 const ADD_CLIENT_SUCCESS = 'ADD_CLIENT_SUCCESS'
 const ADD_CLIENT_FAILURE = 'ADD_CLIENT_FAILURE'
 
-const addClient   = values => (dispatch) => {
+const addClient = value => (dispatch) => {
   dispatch({
     type: ADD_CLIENT_REQUEST,
   });
@@ -19,14 +19,18 @@ const addClient   = values => (dispatch) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       id: uuid(),
-      values,
+      name: value.name,
+      email: value.email,
+      phone: value.phone,
+      position: value.position,
+      company: value.company
     }),
   })
     .then(response => response.json())
     .then((data) => {
       dispatch({
         type: ADD_CLIENT_SUCCESS,
-        todo: data,
+        client: data,
       });
     })
     .catch((error) => {
@@ -59,4 +63,7 @@ const getClient = () => {
   }
 }
 
-export default getClient
+module.exports = {
+  addClient,
+  getClient,
+};

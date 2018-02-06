@@ -1,11 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const HomeContainer = () => (
-  <div>
-    <h3>New client</h3>
-    <div>
-      <h1>I am a home page</h1>
-      <p>TESTING</p>
+  <div className="home-container">
+    <Link to='/Clients' className="home-item">
+      <img className="home-item__img" src="./imgs/clients.png" alt="Add client" />
+      <h4>Clients</h4>
+    </Link>
+    <div className="home-item">
+      <img className="home-item__img" src="./imgs/companies.png" alt="Add client" />
+      <h4>Companies</h4>
     </div>
   </div>
 );
